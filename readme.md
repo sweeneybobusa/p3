@@ -4,6 +4,8 @@ Note from my mom: My dog ate it, uh, yeah. Actually, due to an overabundance wor
 
 In the mean time: I got the packages installed, basic routes going but still got to do the logic and have a user able to choose.
 
-live site: <a href=" http://sweeneybobusa-p3.gopagoda.com>sweeneybobusa-p3.gopagoda.com</a>
+live site: 
+<a href=" http://sweeneybobusa-p3.gopagoda.com/lorem-ipsum>sweeneybobusa-p3.gopagoda.com/lorem-ipsum</a>
+<a href=" http://sweeneybobusa-p3.gopagoda.com/user-generator>sweeneybobusa-p3.gopagoda.com/user-generator</a>
 
 
