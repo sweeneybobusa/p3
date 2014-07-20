@@ -10,7 +10,7 @@
 			"homepage": "http://www.sweeneybob.com",
 			"role":	"developer and designer"
 		}
-		]
+		],
 	
 	"require": {
 		"laravel/framework": "4.2.*",
