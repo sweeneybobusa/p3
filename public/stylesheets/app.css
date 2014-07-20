@@ -8066,9 +8066,10 @@ body {
   background-color: white;
   background-image: url(/images/backgrounds/parchment1.jpg);
   height: 100%;
+  overflow: auto;
 }
 
-/* line 19, ../scss/_decorations.scss */
+/* line 20, ../scss/_decorations.scss */
 .panel {
   background-image: url(/images/backgrounds/light_parchment1.jpg);
   border: 6px #e5ce87;
