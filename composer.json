@@ -1,8 +1,17 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"name": "SweeneyBobUSA",
+	"description": "Experiments of a graphic designer seeking to transition into a web developer.",
+	"keywords": ["web developer", "designer", "illustrator", "web designer", "Boston", "Cambridge", "vidography", "online ads", "harvard", "gay", "two-stepping", "country", "acting", "dancing"],
 	"license": "MIT",
+	"authors": [
+		{
+			"name":	"sweeneybobusa/p3",
+			"email": "designer@sweeneybob.com",
+			"homepage": "http://www.sweeneybob.com",
+			"role":	"developer and designer"
+		}
+		]
+	
 	"require": {
 		"laravel/framework": "4.2.*",
 		"badcow/lorem-ipsum": "dev-master",
