@@ -87,7 +87,7 @@ Route::put('/lorem-ipsum/{lorem_paragraphs}', function($lorem_paragraphs) {
 // * Get route for User Generator
 // *
 
-Route::get('/user_generator', function() {
+Route::get('/user-generator', function() {
 echo "<h1>User Generator </h1>";
 require_once '../vendor/fzaninotto/faker/src/autoload.php';
 $faker = Faker\Factory::create();
@@ -105,7 +105,7 @@ for ($i=0; $i < $default_users; $i++) {
 // * Get route for User Generator
 // *
 
-Route::get('/user_generator/{number_users}', function($number_users) {
+Route::get('/user-generator/{number_users}', function($number_users) {
 echo "<h1>User Generator </h1>";
 $default_users = $number_users;
 require_once '../vendor/fzaninotto/faker/src/autoload.php';

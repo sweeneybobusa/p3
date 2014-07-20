@@ -3,7 +3,7 @@
 ## Under construction: check in after 7/20 (hopefully)
 
 ## live site (such as it is)
-* [Developer's Best Friend index page](http://sweeneybobusa-p3.gopagoda.com/lorem-ipsum "Developer's best friend main page")
+* [Developer's Best Friend index page](http://sweeneybobusa-p3.gopagoda.com "Developer's best friend main page")
 * [Lorem-ipsum](http://sweeneybobusa-p3.gopagoda.com/lorem-ipsum "Lorum Ipsum Generator")
 * [User Generator](http://sweeneybobusa-p3.gopagoda.com/user-generator "User Generator")
 
