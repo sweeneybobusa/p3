@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="stylesheets/app.css" />
 	<link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 	<script src="bower_components/modernizr/modernizr.js"></script>
+	<?php  require_once '../vendor/fzaninotto/faker/src/autoload.php'; ?>
+
 </head>
 <body>
 	<!--outer wrapper -->
@@ -24,12 +26,16 @@
 		<h2>The Generators</h2>		
 		<!-- ipsum generator -->
 		
-		<div class="large-4 medium-4 columns">
+		<div class="large-8 medium-8 columns">
 		<h3>Lorum Ipsum</h3>
-		<p>For those times where you just want to have some dummy text so you're client won't be distracted by actual words.</p>
+		<p>For those times where you just want to have a bunch dummy text so your client won&rsquo;t be distracted by actual words.</p>
 			<!-- 1 paragraph example here -->
 			<div class="panel" id="lorem-ipsum">
-			<p>generate text here</p>
+				<p><?php $generator = new Badcow\LoremIpsum\Generator();
+					 	$paragraphs = $generator->getParagraphs(1);
+			         	echo implode('</p><p>', $paragraphs); ?></p>
+				<p>Get more users by going to <a href="/lorem-ipsum">Lorem-Ipsum Generator</a> and adding a &ldquo;/[number]&rdquo; (i.e., <a href="/lorem-ipsum/5">lorem-ipsum/5</a>)</p>
+
 			</div>
 		</div>
 		
@@ -39,18 +45,16 @@
 		<p>Need a few dummies to fill in your database? We can help find you a few random folks. </p>
 			<!-- 1 paragraph example here -->
 			<div class="panel" id="user-generator">
-			<p>user here</p>
+				<?php  $faker = Faker\Factory::create(); ?>
+				<h4><?php echo $faker->name, "\n"; ?></h4>
+				<h5>Address:</h5>
+				<p><?php echo $faker->address; ?></p>
+				<h5>Personal quote:</h5>
+				<p>&ldquo;<?php echo $faker->text; ?>&rdquo;</p>
+			
+				<p>Get more users by going to <a href="/user-generator">User Generator</a> and adding a &ldquo;/[number]&rdquo; (i.e., <a href="/user-generator/5">user-generator/5</a>)</p>
+
 			</div>
-		</div>
-		
-		
-		<div class="large-4 medium-4 columns end ">
-			<h3>Passwurd</h3>
-				<p>Kreate a kuntry name-based passwurd fur when yur fixing to r&rsquo;member. </p>
-				<!-- example password here -->
-				<div class="panel" id="password">
-					<p>generate text here</p>
-				</div>
 		</div>
 		
 		<!--end content-->		

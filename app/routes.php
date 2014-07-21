@@ -10,9 +10,69 @@
 |
 */
 
+/*-------------------------------------------------------------
+| Classes used to test number, I tried to use: @include("app/tests/TestNumber.php");
+| to import logic from tests folder but couldn't get it to function
+*/
+class NewNumber {
+		var $number;
+		var $feedback_message;
+		var $variable_default;
+
+		
+		public function set_number($new_number) {
+		
+//	setting defaults
+		$this->feedback_message = "";
+		$this->variable_default = 4;
+		
+//	checking if number is set
+		if (isset($new_number)){
+		
+//	if yes, then check if it's a number
+			if (is_numeric($new_number)) {
+			
+				// if yes, then set to intiger
+				$this->number = intval($new_number);
+				
+				//check for 0, 1, or negative numbers
+				if ($this->number == 0){
+					$this->feedback_message = "I can't give you zero results, silly! ";
+				}
+				elseif ($this->number == 1){
+					$this->feedback_message = "One. Singular sensation! ";
+				}
+				elseif ($this->number < 0){
+					$this->number = $this->number * -1;
+					$this->feedback_message = "Why so negative? I strive to be positive whenever I can";
+				}
+			}
+			
+			// if not a number, set to default value and give can't process characters message
+			else {
+				$this->number = $this->variable_default;
+				$this->feedback_message = "I can't process anything but numbers, sad to say. But I did want to give you some results";
+				}
+		}
+		
+		// if not set set default and welcome message
+		else{
+			$this->feedback_message = "Welcome!";
+			$this->number = $this->variable_default;
+		}
+		
+	}
+};
+
+
+/*--------------------------
+| index page
+| --------------------------
+*/
+
 Route::get('/', function()
 {
-	return View::make('index_blade');
+	return View::make('index');
 });
 
 // **
@@ -21,8 +81,8 @@ Route::get('/', function()
 
 Route::get('/lorem-ipsum/{url_variable?}', function($url_variable = null) {
 $item_generated = "paragraph";
-$pluralize = "s";
 
+$pluralize = "s";
 $variable_default = 4;
 //	test to see if value is set
 	if (isset($url_variable)){
@@ -105,16 +165,61 @@ for ($i=0; $i < $default_users; $i++) {
 // * Get route for User Generator
 // *
 
-Route::get('/user-generator/{number_users}', function($number_users) {
+Route::get('/user-generator/{user_url}', function($user_url) {
 echo "<h1>User Generator </h1>";
-$default_users = $number_users;
+$user_count = new NewNumber($user_url);
+$user_count->set_number($user_url);
+$count = $user_count->number;
+
 require_once '../vendor/fzaninotto/faker/src/autoload.php';
 $faker = Faker\Factory::create();
 
-for ($i=0; $i < $default_users; $i++) {
+for ($i=0; $i < $count; $i++) {
+	echo "<p>" . $faker->name, "\n" . "<br />";
+	echo $faker->address . "<br />";
+	echo $faker->text . "</p>";
+}
+});
+
+// **
+// * put route for User Generator
+// *
+
+Route::put('/user-generator/{user_url}', function($user_url) {
+echo "<h1>User Generator </h1>";
+$user_count = new NewNumber($user_url);
+$user_count->set_number($user_url);
+$count = $user_count->number;
+
+require_once '../vendor/fzaninotto/faker/src/autoload.php';
+$faker = Faker\Factory::create();
+
+for ($i=0; $i < $count; $i++) {
 	echo "<p>" . $faker->name, "\n" . "<br />";
 	echo $faker->address . "<br />";
 	echo $faker->text . "</p>";
 }
 
 });
+
+
+Route::get('/testing/{test_url?}', function($test_url = null) {
+	$title ="Test";
+	$test = new NewNumber($test_url);
+	echo $test->number;
+	$test->set_number($test_url);
+	echo $test->feedback_message;
+	echo $test->number;
+	
+		}
+);
+
+Route::get('/billing/{billing_url?}', function($billing_url = null) {
+	$billing = new NewNumber($billing_url);
+	$billing->set_number($billing_url);
+	echo $billing->number;
+	$data['paragraphs_number'] = $billing->number;
+	return View::make('_lorem', $data);
+		}
+);
+
