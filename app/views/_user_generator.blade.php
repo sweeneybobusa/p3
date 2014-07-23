@@ -4,7 +4,7 @@
 @section('content')
 <?php require_once '../vendor/fzaninotto/faker/src/autoload.php'; ?>
 	<p>@if (isset($message)){{ $message }} @endif 
-	Here&rsquo;s {{$default_users}} Users. To generate more, change the number in the url next to  the / above (ie, <a href="user-generator/6">user-generator/6</a>).</p>
+	Here&rsquo;s {{$default_users}} Users. To generate more, change the number in the url next to  the / above (ie, <a href="6">user-generator/6</a>).</p>
 	<div class="panel large-12 large-centered medium-12 medium-centered columns">
 		<div class="row">
 		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
